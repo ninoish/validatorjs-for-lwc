@@ -1,4 +1,5 @@
 import assertString from "./util_assertString";
+import length from "./length";
 
 /* eslint-disable prefer-rest-params */
 export default function isLength(str, options) {
@@ -13,7 +14,7 @@ export default function isLength(str, options) {
     min = arguments[1] || 0;
     max = arguments[2];
   }
-  const surrogatePairs = str.match(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g) || [];
-  const len = str.length - surrogatePairs.length;
+
+  const len = length(str);
   return len >= min && (typeof max === "undefined" || len <= max);
 }
