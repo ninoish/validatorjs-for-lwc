@@ -9,14 +9,15 @@ This repository just moved the source code of validator.js under an lwc folder (
 
 import validatorjs lwc component in your lwc by follow.
 
-```default import
+```js
+// default import
 import validatorjs from 'c/validatorjs';
 
-validatorjs.isURL('https://google.com');
-
+const urlValidation = validatorjs.isURL('https://google.com');
 ```
 
-```named import
+```js
+// named import
 import { isEmail } from 'c/validatorjs';
 
 const emailValidation = isEmail('hello world');
